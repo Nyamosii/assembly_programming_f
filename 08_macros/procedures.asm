@@ -9,8 +9,10 @@ section .text
     global _start
 
 print:
-    mov rax, 1          
-    mov rdi, 1          
+    mov rax, 1   ;what       
+    mov rdi, 1   ; how
+    ; rsi        ;addr
+    ; rdx        ;len
     syscall
     ret
 
@@ -26,6 +28,8 @@ _start:
     mov rsi, msg1
     mov rdx, len1
     call print
+
+    ; mov r9, rax
 
     mov rdi, 1000000000
     call delay
